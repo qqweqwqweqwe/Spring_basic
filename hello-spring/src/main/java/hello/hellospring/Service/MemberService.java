@@ -10,13 +10,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-@Component
 public class MemberService {
 
     private final MemberRepository memberRepository ;
 
-    @Autowired  // 이것또한
+    @Autowired  // 이것또한 이거 SpringConfig의 memberservice 가 bean으로 설정되어 있지 않으면 안먹힘  스프링 빈으로 설정되어 있느거만 autowired 적용됨
     public MemberService(MemberRepository memberRepository){
         this.memberRepository=memberRepository;
         // 멤버리포지토리를 외부에서 넣어줌 이런걸 di라고 함
